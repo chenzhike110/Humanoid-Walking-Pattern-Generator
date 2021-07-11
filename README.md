@@ -10,6 +10,6 @@ Use Traditional Method ZMP and Learning Method PPO to generate Walking Pattern f
 
 #### Env
 
-![Screenshot from 2021-07-12 00-45-11](./images/Screenshot from 2021-07-12 00-45-11.png)
+![Screenshot from 2021-07-12 00-45-11](./images/env.png)
 
 - Simple Robot with eight force sensors under the feet
