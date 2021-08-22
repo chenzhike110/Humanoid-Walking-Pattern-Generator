@@ -1,0 +1,834 @@
+<?xml version = "1.0"?>
+<robot name="Roban">
+
+    <link name="base_link"/>
+
+    <joint name="joint_world" type="fixed">
+        <parent link="base_link"/>
+        <child link="Torso_link"/>
+        <origin xyz="0 0 0.4949"/>
+    </joint>
+
+    <link name="Torso_link">
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.16494 0.19860 0.22762"/>
+            </geometry>
+        </collision>
+
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.16494 0.19860 0.22762"/>
+            </geometry>
+        </visual>
+
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+            <mass value="4.084"/>
+            <inertia
+              ixx="0.1047"
+              iyy="0.1011"
+              izz="0.1007"
+              ixy="0"
+              ixz="0"
+              iyz="0"
+            />
+        </inertial>
+    </link>
+
+    <!--left leg-->
+    <joint name="leftLegJoint1" type="revolute">
+        <parent link="Torso_link"/>
+        <child link="leftLegLink1"/>
+        <origin xyz="0.0468 0.0041 -0.0917" rpy="0 0 1.57"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-3.14" upper="3.14" effort="250" velocity="3.1416"/>
+        <dynamics damping="0.0" friction="0.001"/>
+    </joint>
+
+    <link name="leftLegLink1">
+
+        <visual>
+            <origin xyz="-0.0002 -0.0002 -0.0435" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.040157 0.048651 0.055605"/>
+            </geometry>
+        </visual>
+
+        <inertial>
+            <origin xyz="-0.0002 -0.0002 -0.0435" rpy="0 0 0"/>
+            <mass value="0.1"/>
+            <inertia
+              ixx="0.0003"
+              iyy="0.0003"
+              izz="0.0001"
+              ixy="0"
+              ixz="0"
+              iyz="0"
+            />
+        </inertial>
+    </link>
+
+    <joint name="leftLegJoint2" type="revolute">
+        <parent link="leftLegLink1"/>
+        <child link="leftLegLink2"/>
+        <origin xyz="0.0144 0.0024 -0.0431" rpy="0 0 0"/>
+        <axis xyz="-1 0 0"/>
+        <limit lower="-3.14" upper="3.14" effort="250" velocity="3.1416"/>
+        <dynamics damping="0.0" friction="0.001"/>
+    </joint>
+
+    <link name="leftLegLink2">
+
+        <collision>
+            <origin xyz="-0.0109 -0.0008 -0.0429" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.055365 0.085155 0.011622"/>
+            </geometry>
+        </collision>
+
+        <visual>
+            <origin xyz="-0.0109 -0.0008 -0.0429" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.055365 0.085155 0.011622"/>
+            </geometry>
+        </visual>
+
+        <inertial>
+            <origin xyz="-0.0109 -0.0008 -0.0429" rpy="0 0 0"/>
+            <mass value="0.08"/>
+            <inertia
+              ixx="0.0003"
+              iyy="0.0003"
+              izz="0.0002"
+              ixy="0"
+              ixz="0"
+              iyz="0"
+            />
+        </inertial>
+    </link>
+
+    <joint name="leftLegJoint3" type="revolute">
+        <parent link="leftLegLink2"/>
+        <child link="leftLegLink3"/>
+        <origin xyz="-0.0110 -0.0107 -0.0596" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-3.14" upper="3.14" effort="250" velocity="3.1416"/>
+        <dynamics damping="0.0" friction="0.001"/>
+    </joint>
+
+    <link name="leftLegLink3">
+
+        <visual>
+            <origin xyz="-0.0038 0.0036 -0.0375" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.084999 0.080315 0.17753"/>
+            </geometry>
+        </visual>
+
+        <inertial>
+            <origin xyz="-0.0038 0.0036 -0.0375" rpy="0 0 0"/>
+            <mass value="0.15"/>
+            <inertia
+              ixx="0.0017"
+              iyy="0.0017"
+              izz="0.00036"
+              ixy="0"
+              ixz="0"
+              iyz="0"
+            />
+        </inertial>
+    </link>
+
+    <joint name="leftLegJoint4" type="revolute">
+        <parent link="leftLegLink3"/>
+        <child link="leftLegLink4"/>
+        <origin xyz="0.0223 0.0001 -0.1028" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-3.14" upper="3.14" effort="250" velocity="3.1416"/>
+        <dynamics damping="0.0" friction="0.001"/>
+    </joint>
+
+    <link name="leftLegLink4">
+
+        <collision>
+            <origin xyz="-0.0161 -0.003 -0.0638" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.081863 0.081627 0.16904"/>
+            </geometry>
+        </collision>
+
+        <visual>
+            <origin xyz="-0.0161 -0.003 -0.0638" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.081863 0.081627 0.16904"/>
+            </geometry>
+        </visual>
+
+        <inertial>
+            <origin xyz="-0.0161 -0.003 -0.0638" rpy="0 0 0"/>
+            <mass value="0.08"/>
+            <inertia
+              ixx="0.0007"
+              iyy="0.00067"
+              izz="0.00014"
+              ixy="0"
+              ixz="0"
+              iyz="0"
+            />
+        </inertial>
+    </link>
+
+    <joint name="leftLegJoint5" type="revolute">
+        <parent link="leftLegLink4"/>
+        <child link="leftLegLink5"/>
+        <origin xyz="0.0 -0.0001 -0.1294" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-3.14" upper="3.14" effort="250" velocity="3.1416"/>
+        <dynamics damping="0.0" friction="0.001"/>
+    </joint>
+
+    <link name="leftLegLink5">
+
+        <visual>
+            <origin xyz="-0.0253 -0.0042 0.002" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.053648 0.049921 0.071678"/>
+            </geometry>
+        </visual>
+
+        <inertial>
+            <origin xyz="-0.0253 -0.0042 0.002" rpy="0 0 0"/>
+            <mass value="0.16"/>
+            <inertia
+              ixx="0.00001"
+              iyy="0.000009"
+              izz="0.000009"
+              ixy="0"
+              ixz="0"
+              iyz="0"
+            />
+        </inertial>
+    </link>
+
+    <joint name="leftLegJoint6" type="revolute">
+        <parent link="leftLegLink5"/>
+        <child link="leftLegLink6"/>
+        <origin xyz="-0.0254 0.0232 -0.0352" rpy="0 0 0"/>
+        <axis xyz="-1 0 0"/>
+        <limit lower="-3.14" upper="3.14" effort="250" velocity="3.1416"/>
+        <dynamics damping="0.0" friction="0.001"/>
+    </joint>
+
+    <link name="leftLegLink6">
+
+        <collision>
+            <origin xyz="0.0108 -0.0301 -0.0223" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.18 0.1 0.01"/>
+            </geometry>
+        </collision>
+
+        <visual>
+            <origin xyz="0.0108 -0.0301 -0.0223" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.18 0.1 0.01"/>
+            </geometry>
+        </visual>
+
+        <inertial>
+            <origin xyz="0.0108 -0.0301 -0.0223" rpy="0 0 0"/>
+            <mass value="0.08"/>
+            <inertia
+              ixx="0.0004"
+              iyy="0.0004"
+              izz="0.0002"
+              ixy="0"
+              ixz="0"
+              iyz="0"
+            />
+        </inertial>
+    </link>
+
+    <!--right leg-->
+    <joint name="rightLegJoint1" type="revolute">
+        <parent link="Torso_link"/>
+        <child link="rightLegLink1"/>
+        <origin xyz="-0.0468 0.0041 -0.0917" rpy="0 0 -1.57"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-3.14" upper="3.14" effort="250" velocity="3.1416"/>
+        <dynamics damping="0.0" friction="0.001"/>
+    </joint>
+
+    <link name="rightLegLink1">
+
+        <visual>
+            <origin xyz="0.0002 -0.0002 -0.0435" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.040157 0.048651 0.055605"/>
+            </geometry>
+        </visual>
+
+        <inertial>
+            <origin xyz="0.0002 -0.0002 -0.0435" rpy="0 0 0"/>
+            <mass value="0.1"/>
+            <inertia
+              ixx="0.0003"
+              iyy="0.0003"
+              izz="0.0001"
+              ixy="0"
+              ixz="0"
+              iyz="0"
+            />
+        </inertial>
+    </link>
+
+    <joint name="rightLegJoint2" type="revolute">
+        <parent link="rightLegLink1"/>
+        <child link="rightLegLink2"/>
+        <origin xyz="-0.0144 0.0024 -0.0431" rpy="0 0 0"/>
+        <axis xyz="-1 0 0"/>
+        <limit lower="-3.14" upper="3.14" effort="250" velocity="3.1416"/>
+        <dynamics damping="0.0" friction="0.001"/>
+    </joint>
+
+    <link name="rightLegLink2">
+
+        <collision>
+            <origin xyz="0.0109 -0.0008 -0.0429" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.055365 0.085155 0.011622"/>
+            </geometry>
+        </collision>
+
+        <visual>
+            <origin xyz="0.0109 -0.0008 -0.0429" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.055365 0.085155 0.011622"/>
+            </geometry>
+        </visual>
+
+        <inertial>
+            <origin xyz="0.0109 -0.0008 -0.0429" rpy="0 0 0"/>
+            <mass value="0.08"/>
+            <inertia
+              ixx="0.0003"
+              iyy="0.0003"
+              izz="0.0002"
+              ixy="0"
+              ixz="0"
+              iyz="0"
+            />
+        </inertial>
+    </link>
+
+    <joint name="rightLegJoint3" type="revolute">
+        <parent link="rightLegLink2"/>
+        <child link="rightLegLink3"/>
+        <origin xyz="0.0110 -0.0107 -0.0596" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-3.14" upper="3.14" effort="250" velocity="3.1416"/>
+        <dynamics damping="0.0" friction="0.001"/>
+    </joint>
+
+    <link name="rightLegLink3">
+
+        <visual>
+            <origin xyz="0.0038 0.0036 -0.0375" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.084999 0.080315 0.17753"/>
+            </geometry>
+        </visual>
+
+        <inertial>
+            <origin xyz="0.0038 0.0036 -0.0375" rpy="0 0 0"/>
+            <mass value="0.15"/>
+            <inertia
+              ixx="0.0017"
+              iyy="0.0017"
+              izz="0.00036"
+              ixy="0"
+              ixz="0"
+              iyz="0"
+            />
+        </inertial>
+    </link>
+
+    <joint name="rightLegJoint4" type="revolute">
+        <parent link="rightLegLink3"/>
+        <child link="rightLegLink4"/>
+        <origin xyz="-0.0223 0.0001 -0.1028" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-3.14" upper="3.14" effort="250" velocity="3.1416"/>
+        <dynamics damping="0.0" friction="0.001"/>
+    </joint>
+
+    <link name="rightLegLink4">
+
+        <collision>
+            <origin xyz="0.0161 -0.003 -0.0638" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.081863 0.081627 0.16904"/>
+            </geometry>
+        </collision>
+
+        <visual>
+            <origin xyz="0.0161 -0.003 -0.0638" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.081863 0.081627 0.16904"/>
+            </geometry>
+        </visual>
+
+        <inertial>
+            <origin xyz="0.0161 -0.003 -0.0638" rpy="0 0 0"/>
+            <mass value="0.08"/>
+            <inertia
+              ixx="0.0007"
+              iyy="0.00067"
+              izz="0.00014"
+              ixy="0"
+              ixz="0"
+              iyz="0"
+            />
+        </inertial>
+    </link>
+
+    <joint name="rightLegJoint5" type="revolute">
+        <parent link="rightLegLink4"/>
+        <child link="rightLegLink5"/>
+        <origin xyz="0.0 -0.0001 -0.1294" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-3.14" upper="3.14" effort="250" velocity="3.1416"/>
+        <dynamics damping="0.0" friction="0.001"/>
+    </joint>
+
+    <link name="rightLegLink5">
+
+        <visual>
+            <origin xyz="0.0253 -0.0042 0.002" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.053648 0.049921 0.071678"/>
+            </geometry>
+        </visual>
+
+        <inertial>
+            <origin xyz="0.0253 -0.0042 0.002" rpy="0 0 0"/>
+            <mass value="0.16"/>
+            <inertia
+              ixx="0.00001"
+              iyy="0.000009"
+              izz="0.000009"
+              ixy="0"
+              ixz="0"
+              iyz="0"
+            />
+        </inertial>
+    </link>
+
+    <joint name="rightLegJoint6" type="revolute">
+        <parent link="rightLegLink5"/>
+        <child link="rightLegLink6"/>
+        <origin xyz="0.0254 0.0232 -0.0352" rpy="0 0 0"/>
+        <axis xyz="-1 0 0"/>
+        <limit lower="-3.14" upper="3.14" effort="250" velocity="3.1416"/>
+        <dynamics damping="0.0" friction="0.001"/>
+    </joint>
+
+    <link name="rightLegLink6">
+
+        <collision>
+            <origin xyz="-0.0108 -0.0301 -0.0223" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.18 0.1 0.01"/>
+            </geometry>
+        </collision>
+
+        <visual>
+            <origin xyz="-0.0108 -0.0301 -0.0223" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.18 0.1 0.01"/>
+            </geometry>
+        </visual>
+
+        <inertial>
+            <origin xyz="-0.0108 -0.0301 -0.0223" rpy="0 0 0"/>
+            <mass value="0.08"/>
+            <inertia
+              ixx="0.0004"
+              iyy="0.0004"
+              izz="0.0002"
+              ixy="0"
+              ixz="0"
+              iyz="0"
+            />
+        </inertial>
+    </link>
+
+    <!--left arm-->
+    <joint name="leftArmJoint1" type="revolute">
+        <parent link="Torso_link"/>
+        <child link="leftArmLink1"/>
+        <origin xyz="0.0932 -0.00037 0.0491" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-3.14" upper="3.14" effort="250" velocity="3.1416"/>
+        <dynamics damping="0.0" friction="0.001"/>
+    </joint>
+
+    <link name="leftArmLink1">
+
+        <collision>
+            <origin xyz="0.0364 -0.0002 0.0172" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.052931 0.078951 0.090331"/>
+            </geometry>
+        </collision>
+
+        <visual>
+            <origin xyz="0.0364 -0.0002 0.0172" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.052931 0.078951 0.090331"/>
+            </geometry>
+        </visual>
+
+        <inertial>
+            <origin xyz="0.0364 -0.0002 0.0172" rpy="0 0 0"/>
+            <mass value="0.04"/>
+            <inertia
+              ixx="0.000017"
+              iyy="0.000008"
+              izz="0.000006"
+              ixy="0"
+              ixz="0"
+              iyz="0"
+            />
+        </inertial>
+    </link>
+
+    <joint name="leftArmJoint2" type="revolute">
+        <parent link="leftArmLink1"/>
+        <child link="leftArmLink2"/>
+        <origin xyz="0.0349 -0.0243 0.0" rpy="0 0 0"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-3.14" upper="3.14" effort="250" velocity="3.1416"/>
+        <dynamics damping="0.0" friction="0.001"/>
+    </joint>
+
+    <link name="leftArmLink2">
+
+        <visual>
+            <origin xyz="0.0337 0.0256 0.0034" rpy="1.57 0 1.57"/>
+            <geometry>
+                <box size="0.05538 0.065177 0.11066"/>
+            </geometry>
+        </visual>
+
+        <inertial>
+            <origin xyz="0.0337 0.0256 0.0034" rpy="1.57 0 1.57"/>
+            <mass value="0.16"/>
+            <inertia
+              ixx="0.00016"
+              iyy="0.00016"
+              izz="0.00032"
+              ixy="0"
+              ixz="0"
+              iyz="0"
+            />
+        </inertial>
+    </link>
+
+    <joint name="leftArmJoint3" type="revolute">
+        <parent link="leftArmLink2"/>
+        <child link="leftArmLink3"/>
+        <origin xyz="0.0758 0.0004 -0.0000" rpy="0 0 0"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-3.14" upper="3.14" effort="250" velocity="3.1416"/>
+        <dynamics damping="0.0" friction="0.001"/>
+    </joint>
+
+    <link name="leftArmLink3">
+
+        <collision>
+            <origin xyz="0.06041 0.0250 0.005" rpy="1.57 0 1.57"/>
+            <geometry>
+                <box size="0.051039 0.06141 0.17418"/>
+            </geometry>
+        </collision>
+
+        <visual>
+            <origin xyz="0.06041 0.0250 0.005" rpy="1.57 0 1.57"/>
+            <geometry>
+                <box size="0.051039 0.06141 0.17418"/>
+            </geometry>
+        </visual>
+
+        <inertial>
+            <origin xyz="0.06041 0.0250 0.005" rpy="1.57 0 1.57"/>
+            <mass value="0.16"/>
+            <inertia
+              ixx="0.00016"
+              iyy="0.00016"
+              izz="0.00032"
+              ixy="0"
+              ixz="0"
+              iyz="0"
+            />
+        </inertial>
+    </link>
+
+    <joint name="leftArmJoint4" type="revolute">
+        <parent link="leftArmLink3"/>
+        <child link="leftArmLink4"/>
+        <origin xyz="0.0818 0.0004 -0.0048" rpy="0 0 0"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-3.14" upper="3.14" effort="250" velocity="3.1416"/>
+        <dynamics damping="0.0" friction="0.001"/>
+    </joint>
+
+    <link name="leftArmLink4">
+
+        <collision>
+            <origin xyz="0.025 0.0250 -0.0071" rpy="1.57 1.57 1.57"/>
+            <geometry>
+                <box size="0.01329 0.044319 0.080769"/>
+            </geometry>
+        </collision>
+
+        <visual>
+            <origin xyz="0.025 0.0250 -0.0071" rpy="1.57 1.57 1.57"/>
+            <geometry>
+                <box size="0.01329 0.044319 0.080769"/>
+            </geometry>
+        </visual>
+
+        <inertial>
+            <origin xyz="0.025 0.0250 -0.0071" rpy="1.57 1.57 1.57"/>
+            <mass value="0.15"/>
+            <inertia
+              ixx="0.00021"
+              iyy="0.00020"
+              izz="0.00043"
+              ixy="0"
+              ixz="0"
+              iyz="0"
+            />
+        </inertial>
+    </link>
+
+    <!--right arm-->
+    <joint name="rightArmJoint1" type="revolute">
+        <parent link="Torso_link"/>
+        <child link="rightArmLink1"/>
+        <origin xyz="-0.0932 -0.00037 0.0491" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-3.14" upper="3.14" effort="250" velocity="3.1416"/>
+        <dynamics damping="0.0" friction="0.001"/>
+    </joint>
+
+    <link name="rightArmLink1">
+
+        <collision>
+            <origin xyz="-0.0364 -0.0002 0.0172" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.052931 0.078951 0.090331"/>
+            </geometry>
+        </collision>
+
+        <visual>
+            <origin xyz="-0.0364 -0.0002 0.0172" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.052931 0.078951 0.090331"/>
+            </geometry>
+        </visual>
+
+        <inertial>
+            <origin xyz="-0.0364 -0.0002 0.0172" rpy="0 0 0"/>
+            <mass value="0.04"/>
+            <inertia
+              ixx="0.000017"
+              iyy="0.000008"
+              izz="0.000006"
+              ixy="0"
+              ixz="0"
+              iyz="0"
+            />
+        </inertial>
+    </link>
+
+    <joint name="rightArmJoint2" type="revolute">
+        <parent link="rightArmLink1"/>
+        <child link="rightArmLink2"/>
+        <origin xyz="-0.0349 -0.0243 0.0" rpy="0 0 0"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-3.14" upper="3.14" effort="250" velocity="3.1416"/>
+        <dynamics damping="0.0" friction="0.001"/>
+    </joint>
+
+    <link name="rightArmLink2">
+
+        <visual>
+            <origin xyz="-0.0337 0.0256 0.0034" rpy="1.57 0 1.57"/>
+            <geometry>
+                <box size="0.05538 0.065177 0.11066"/>
+            </geometry>
+        </visual>
+
+        <inertial>
+            <origin xyz="-0.0337 0.0256 0.0034" rpy="1.57 0 1.57"/>
+            <mass value="0.16"/>
+            <inertia
+              ixx="0.00016"
+              iyy="0.00016"
+              izz="0.00032"
+              ixy="0"
+              ixz="0"
+              iyz="0"
+            />
+        </inertial>
+    </link>
+
+    <joint name="rightArmJoint3" type="revolute">
+        <parent link="rightArmLink2"/>
+        <child link="rightArmLink3"/>
+        <origin xyz="-0.0758 0.0004 -0.0000" rpy="0 0 0"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-3.14" upper="3.14" effort="250" velocity="3.1416"/>
+        <dynamics damping="0.0" friction="0.001"/>
+    </joint>
+
+    <link name="rightArmLink3">
+
+        <collision>
+            <origin xyz="-0.06041 0.0250 0.005" rpy="1.57 0 1.57"/>
+            <geometry>
+                <box size="0.051039 0.06141 0.17418"/>
+            </geometry>
+        </collision>
+
+        <visual>
+            <origin xyz="-0.06041 0.0250 0.005" rpy="1.57 0 1.57"/>
+            <geometry>
+                <box size="0.051039 0.06141 0.17418"/>
+            </geometry>
+        </visual>
+
+        <inertial>
+            <origin xyz="-0.06041 0.0250 0.005" rpy="1.57 0 1.57"/>
+            <mass value="0.16"/>
+            <inertia
+              ixx="0.00016"
+              iyy="0.00016"
+              izz="0.00032"
+              ixy="0"
+              ixz="0"
+              iyz="0"
+            />
+        </inertial>
+    </link>
+
+    <joint name="rightArmJoint4" type="revolute">
+        <parent link="rightArmLink3"/>
+        <child link="rightArmLink4"/>
+        <origin xyz="-0.0818 0.0004 -0.0048" rpy="0 0 0"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-3.14" upper="3.14" effort="250" velocity="3.1416"/>
+        <dynamics damping="0.0" friction="0.001"/>
+    </joint>
+
+    <link name="rightArmLink4">
+
+        <collision>
+            <origin xyz="-0.025 0.0250 -0.0071" rpy="1.57 1.57 1.57"/>
+            <geometry>
+                <box size="0.01329 0.044319 0.080769"/>
+            </geometry>
+        </collision>
+
+        <visual>
+            <origin xyz="-0.025 0.0250 -0.0071" rpy="1.57 1.57 1.57"/>
+            <geometry>
+                <box size="0.01329 0.044319 0.080769"/>
+            </geometry>
+        </visual>
+
+        <inertial>
+            <origin xyz="-0.025 0.0250 -0.0071" rpy="1.57 1.57 1.57"/>
+            <mass value="0.15"/>
+            <inertia
+              ixx="0.00021"
+              iyy="0.00020"
+              izz="0.00043"
+              ixy="0"
+              ixz="0"
+              iyz="0"
+            />
+        </inertial>
+    </link>
+
+    <!-- head -->
+    <joint name="headJoint1" type="revolute">
+        <parent link="Torso_link"/>
+        <child link="headLink1"/>
+        <origin xyz="0.00026 -0.0076 0.0809" rpy="0 0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-3.14" upper="3.14" effort="250" velocity="3.1416"/>
+        <dynamics damping="0.0" friction="0.001"/>
+    </joint>
+
+    <link name="headLink1">
+
+        <visual>
+            <origin xyz="0.00005 -0.0080 0.0258" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.02 0.04 0.0412"/>
+            </geometry>
+        </visual>
+
+        <inertial>
+            <origin xyz="0.00005 -0.0080 0.0258" rpy="0 0 0"/>
+            <mass value="0.15"/>
+            <inertia
+              ixx="0.00021"
+              iyy="0.00020"
+              izz="0.00043"
+              ixy="0"
+              ixz="0"
+              iyz="0"
+            />
+        </inertial>
+    </link>
+
+    <joint name="headJoint2" type="revolute">
+        <parent link="headLink1"/>
+        <child link="headLink2"/>
+        <origin xyz="0.0197 -0.0131 0.0172" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-3.14" upper="3.14" effort="250" velocity="3.1416"/>
+        <dynamics damping="0.0" friction="0.001"/>
+    </joint>
+
+    <link name="headLink2">
+
+        <visual>
+            <origin xyz="-0.01917 0.0076 0.0422" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.10928 0.12082 0.14024"/>
+            </geometry>
+        </visual>
+
+        <inertial>
+            <origin xyz="-0.01917 0.0076 0.0422" rpy="0 0 0"/>
+            <mass value="0.15"/>
+            <inertia
+              ixx="0.00021"
+              iyy="0.00020"
+              izz="0.00043"
+              ixy="0"
+              ixz="0"
+              iyz="0"
+            />
+        </inertial>
+    </link>
+    
+</robot>
