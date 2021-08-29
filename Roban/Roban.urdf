@@ -6,7 +6,7 @@
     <joint name="joint_world" type="fixed">
         <parent link="base_link"/>
         <child link="Torso_link"/>
-        <origin xyz="0 0 0.4949"/>
+        <origin xyz="0 0 0.4949" rpy="0 0 0"/>
     </joint>
 
     <link name="Torso_link">
@@ -252,6 +252,15 @@
         </inertial>
     </link>
 
+    <joint name="leftfoot" type="revolute">
+        <parent link="leftLegLink6"/>
+        <child link="leftfootlink"/>
+        <origin xyz="0.0108 -0.0301 -0.0223" rpy="0 0 0"/>
+        <limit lower="0.0" upper="0.0" effort="250" velocity="3.1416"/>
+    </joint>
+
+    <link name="leftfootlink"/>
+
     <!--right leg-->
     <joint name="rightLegJoint1" type="revolute">
         <parent link="Torso_link"/>
@@ -466,6 +475,15 @@
         </inertial>
     </link>
 
+    <joint name="rightfoot" type="revolute">
+        <parent link="rightLegLink6"/>
+        <child link="rightfootlink"/>
+         <origin xyz="-0.0108 -0.0301 -0.0223" rpy="0 0 0"/>
+        <limit lower="0.0" upper="0.0" effort="250" velocity="3.1416"/>
+    </joint>
+
+    <link name="rightfootlink"/>
+
     <!--left arm-->
     <joint name="leftArmJoint1" type="revolute">
         <parent link="Torso_link"/>
@@ -615,6 +633,15 @@
             />
         </inertial>
     </link>
+
+    <joint name="lefthand" type="revolute">
+        <parent link="leftArmLink4"/>
+        <child link="lefthandlink"/>
+         <origin xyz="0.025 0.0250 -0.0071" rpy="0 0 0"/>
+        <limit lower="0.0" upper="0.0" effort="250" velocity="3.1416"/>
+    </joint>
+
+    <link name="lefthandlink"/>
 
     <!--right arm-->
     <joint name="rightArmJoint1" type="revolute">
@@ -766,6 +793,15 @@
         </inertial>
     </link>
 
+    <joint name="righthand" type="revolute">
+        <parent link="rightArmLink4"/>
+        <child link="righthandlink"/>
+         <origin xyz="-0.025 0.0250 -0.0071" rpy="0 0 0"/>
+        <limit lower="0.0" upper="0.0" effort="250" velocity="3.1416"/>
+    </joint>
+
+    <link name="righthandlink"/>
+
     <!-- head -->
     <joint name="headJoint1" type="revolute">
         <parent link="Torso_link"/>
@@ -830,5 +866,14 @@
             />
         </inertial>
     </link>
+
+    <joint name="head" type="revolute">
+        <parent link="headLink2"/>
+        <child link="headlink"/>
+         <origin xyz="-0.01917 0.0076 0.0422" rpy="0 0 0"/>
+        <limit lower="0.0" upper="0.0" effort="250" velocity="3.1416"/>
+    </joint>
+
+    <link name="headlink"/>
     
 </robot>

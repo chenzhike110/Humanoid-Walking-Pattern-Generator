@@ -44,4 +44,8 @@ Use Traditional Method ZMP and Learning Method PPO to generate Walking Pattern f
 
 - Change Feet
 
-  
+  ![change](./images/change.png)
+  Given orbital energy
+
+  ![constraint](./images/constraint.svg)
+
